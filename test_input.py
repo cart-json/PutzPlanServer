@@ -67,8 +67,8 @@ with open(path, "r+") as file:
 # cur.execute("""
 #     insert into Users (id, name, points, password)
 #     values
-#         (1,'Clemens',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
-#         (2,'Johannes',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
+#         (2,'Clemens',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
+#         (1,'Johannes',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
 #         (3,'Leo',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
 #         (4,'Nick',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2'),
 #         (5,'Robin',0,'33c5ebbb01d608c254b3b12413bdb03e46c12797e591770ccf20f5e2819929b2')

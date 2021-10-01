@@ -35,6 +35,9 @@ class Server:
         if QAJ.getUserByAuthKey(authKey) == None:
             result = ({ 'failed' : bool(1), 'message': 'wrong authKey'})
             print(result)
+        elif typ == 'setTask':
+            task = request.args.get('task')
+            result = QAJ.update(int(task),authKey)
         elif typ == 'TaskDone':
             task = request.args.get('TaskKey')
             result = QAJ.update(int(task),authKey)

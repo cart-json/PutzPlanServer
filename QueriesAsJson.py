@@ -52,9 +52,9 @@ class QueriesAsJson:
     def getAllData(authKey):
             result = {}
             result["users"] = QueriesAsJson.getAllUsers()
-            result["tasks"] = []
             result["lastWeek"] = QueriesAsJson.getLastWeek()
-            result["tasks"].append(QueriesAsJson.getUserTasks(authKey))
+            result["currentUser"] = QueriesAsJson.getCurrentUser(authKey)
+            result["subTasks"] = QueriesAsJson.getUserTasks(authKey)
             return(result)
         
     #Die Daten zu den Nutzern abgerufen und ins JSON Format transformiert
@@ -74,9 +74,12 @@ class QueriesAsJson:
             resultTasks.append(QueriesAsJson.taskToJson(row))
         if not user[5]:
             resultTasks = resultTasks + QueriesAsJson.getAdditionalTasks()
-        result = {'name': user[6], 'currentUser': {'name' : user[1], 'points' : user[2], 'absent' : bool(user[5])},
-                  'subTasks': resultTasks}
-        return result
+        return resultTasks
+    
+    def getCurrentUser(authKey):
+        user = QRY.getUserByAuthKey(authKey)
+        return {'mainTask': user[6],'name' : user[1], 'points' : user[2], 'absent' : bool(user[5])}
+        
         
         
     def getAdditionalTasks():
