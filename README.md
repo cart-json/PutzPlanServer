@@ -16,7 +16,8 @@ One part of it's job is to process and answer the clients queries:
   - checking authentication keys or username and password
   - collecting and transfering all data, that is relevant for a specific user
   - updating the database and loging updates
-The Second part are periodic jobs
+  - 
+The Second part are periodic jobs:
   - redistributing tasks once a week (users switch their tasks randomly)
   - setting all tasks undone after a day (so every task can be done every day)
 
